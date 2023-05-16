@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="extention.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>카드게임</title>
+    <body onresize="parent.resizeTo(640,480)" onload="parent.resizeTo(640,480)"></body>
+    <style>
+    </style>
+</head>
+<body>
+    <div class ="background">
+        <div class="cost">
+            <div class="back"><img src = "640_480.png"/></div>
+            <div class="b1"><img id = "b1_img" src="01_background1.png"/></div>
+            <div class="b2"><img id = "b2_img"src="02_background1.png"/></div>
+            <div class="b3"><img id = "b3_img"src="03_background1.png"/></div>
+            <div class="b4"><img id = "b4_img"src="non_background.png"/></div>
+            <div class="b5"><img id = "b5_img"src="non_background.png"/></div>
+            <div class="b6"><img id = "b6_img"src="non_background.png"/></div>
+            <div class="b7"><img id = "b7_img"src="non_background.png"/></div>
+            <div class="b8"><img id = "b8_img"src="non_background.png"/></div>
+            <div class="b9"><img id = "b9_img"src="non_background.png"/></div>
+            <div class = "Field1" onclick="ButtonDown.instance.FieldCardSelect(0)">
+                <div class="card"><img id = "FieldCard1ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "fc1cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "fc1hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "fc1atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "fc1effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "Field2" onclick="ButtonDown.instance.FieldCardSelect(1)">
+                <div class="card"><img id = "FieldCard2ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "fc2cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "fc2hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "fc2atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "fc2effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "Field3" onclick="ButtonDown.instance.FieldCardSelect(2)">
+                <div class="card"><img id = "FieldCard3ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "fc3cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "fc3hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "fc3atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "fc3effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "Field4" onclick="ButtonDown.instance.FieldCardSelect(3)">
+                <div class="card"><img id = "FieldCard4ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "fc4cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "fc4hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "fc4atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "fc4effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "NField1" onclick="ButtonDown.instance.NFieldCardSelect(0)">
+                <div class="card"><img id = "NPCFieldCard1ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "nfc1cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "nfc1hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "nfc1atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "nfc1effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "NField2" onclick="ButtonDown.instance.NFieldCardSelect(1)">
+                <div class="card"><img id = "NPCFieldCard2ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "nfc2cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "nfc2hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "nfc2atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "nfc2effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "NField3" onclick="ButtonDown.instance.NFieldCardSelect(2)">
+                <div class="card"><img id = "NPCFieldCard3ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "nfc3cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "nfc3hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "nfc3atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "nfc3effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class = "NField4" onclick="ButtonDown.instance.NFieldCardSelect(3)">
+                <div class="card"><img id = "NPCFieldCard4ImgID" src="Field_Empty.png"/>
+                    <div class = "cCost"><img id = "nfc4cost" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "nfc4hp" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "nfc4atk" src = "non.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "nfc4effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hand1" onclick="ButtonDown.instance.changeImg(1)">
+                <div class="card"><img id = "handCard1ImgID" src="mob1.png"/>
+                    <div class = "cCost"><img id = "c1cost" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "c1hp" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "c1atk" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "c1effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="hand2"onclick="ButtonDown.instance.changeImg(2)">
+                <div class="card"><img id = "handCard2ImgID" src="mob2.png"/>
+                    <div class = "cCost"><img id = "c2cost" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "c2hp" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "c2atk" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "c2effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="hand3"onclick="ButtonDown.instance.changeImg(3)">
+                <div class="card"><img id = "handCard3ImgID" src="mob3.png"/>
+                    <div class = "cCost"><img id = "c3cost" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "c3hp" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "c3atk" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "c3effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="hand4"onclick="ButtonDown.instance.changeImg(4)">
+                <div class="card"><img id = "handCard4ImgID" src="mob4.png"/>
+                    <div class = "cCost"><img id = "c4cost" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "c4hp" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "c4atk" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "c4effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="hand5"onclick="ButtonDown.instance.changeImg(5)">
+                <div class="card"><img id = "handCard5ImgID" src="mob5.png"/>
+                    <div class = "cCost"><img id = "c5cost" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "hp"><img id = "c5hp" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "atk"><img id = "c5atk" src = "n5.png"style = "width:12px;heigth:12px"/>
+                    </div>
+                    <div class = "effect"><img id = "c5effect" src = "non.png"style = "width:35px;heigth:35px"/>
+                    </div>
+                </div>
+            </div>
+            <div class="deck"onclick="ButtonDown.instance.DeckSelect()">
+                <div class="deckCard_back"><img id = "deckCard1Img" src="card_back.png"/>
+                </div>
+                <div class="deckCard_front"><img id = "deckCard2Img" src="card_back.png"/>
+                </div>
+            </div>
+            <div class = "PlayerHP">
+                <div class="HP"><img id = "HP" src="hp_green.png"/></div>
+                <div class="fHP"><img id = "front" src="n3.png"style = "width:19px;heigth:19px"/></div>
+                <div class="rHP"><img id = "rear" src="n0.png"style = "width:19px;heigth:19px"/></div>
+            </div>
+            <div class = "NPCHP">
+                <div class="HP"><img id = "nHP" src="hp_red.png"/></div>
+                <div class="fHP"><img id = "nfront" src="n3.png"style = "width:19px;heigth:19px"/></div>
+                <div class="rHP"><img id = "nrear" src="n0.png"style = "width:19px;heigth:19px"/></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn">게임 시작</button>
+    </div>
+    <script type="text/javascript" src="func.js"></script>
+</body>
+</html>
